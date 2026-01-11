@@ -69,13 +69,15 @@ vercel env pull .env.local --environment=preview
 ### ローカル起動
 
 ```bash
-pnpm --filter web prisma generate
-pnpm --filter web dev
+cd apps/web
+pnpm prisma generate
+pnpm dev
 ```
 
 ### テーブルがないエラーの対処（例: `public.users` が存在しない）
 
 ```bash
-pnpm --filter web prisma db push
-pnpm --filter web prisma db seed
+cd apps/web
+pnpm prisma db push
+pnpm prisma db seed
 ```
