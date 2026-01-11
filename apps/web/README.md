@@ -55,3 +55,29 @@ pnpm dev
 ```
 
 Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples) ([Documentation](https://nextjs.org/docs/deployment)).
+
+## Monorepoでのローカル実行（日本語メモ）
+
+### Preview環境のENVを取得
+
+```bash
+cd apps/web
+vercel link
+vercel env pull .env.local --environment=preview
+```
+
+### ローカル起動
+
+```bash
+cd apps/web
+pnpm prisma generate
+pnpm dev
+```
+
+### テーブルがないエラーの対処（例: `public.users` が存在しない）
+
+```bash
+cd apps/web
+pnpm prisma db push
+pnpm prisma db seed
+```
