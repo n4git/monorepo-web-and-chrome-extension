@@ -1,5 +1,23 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "WEB_POSTGRES_URL",
+    "WEB_POSTGRES_PRISMA_URL",
+    "WEB_DATABASE_URL_UNPOOLED",
+    "WEB_POSTGRES_URL_NON_POOLING",
+    "WEB_PGHOST",
+    "WEB_POSTGRES_USER",
+    "WEB_DATABASE_URL",
+    "WEB_POSTGRES_PASSWORD",
+    "WEB_POSTGRES_DATABASE",
+    "WEB_PGPASSWORD",
+    "WEB_PGDATABASE",
+    "WEB_PGHOST_UNPOOLED",
+    "WEB_PGUSER",
+    "WEB_POSTGRES_URL_NO_SSL",
+    "WEB_POSTGRES_HOST",
+    "WEB_NEON_PROJECT_ID"
+  ],
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
