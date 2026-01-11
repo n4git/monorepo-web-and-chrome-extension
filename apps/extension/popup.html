@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Demo</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+      }
+      body {
+        margin: 0;
+        font: 13px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+          "Apple Color Emoji", "Segoe UI Emoji";
+        width: 360px;
+      }
+      header {
+        padding: 12px 12px 8px;
+        border-bottom: 1px solid rgba(127, 127, 127, 0.25);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+      }
+      h1 {
+        font-size: 14px;
+        margin: 0;
+        font-weight: 700;
+      }
+      .row {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      input {
+        flex: 1;
+        padding: 6px 8px;
+        border-radius: 8px;
+        border: 1px solid rgba(127, 127, 127, 0.35);
+        background: transparent;
+      }
+      button {
+        padding: 6px 10px;
+        border-radius: 8px;
+        border: 1px solid rgba(127, 127, 127, 0.35);
+        background: transparent;
+        cursor: pointer;
+      }
+      main {
+        padding: 12px;
+      }
+      .muted {
+        opacity: 0.75;
+      }
+      .error {
+        color: #c00;
+      }
+      .list {
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .item {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        padding: 10px;
+        border: 1px solid rgba(127, 127, 127, 0.25);
+        border-radius: 12px;
+      }
+      .avatar {
+        width: 32px;
+        height: 32px;
+        border-radius: 999px;
+        object-fit: cover;
+        flex: 0 0 auto;
+      }
+      .meta {
+        flex: 1;
+        min-width: 0;
+      }
+      .name {
+        font-weight: 700;
+        margin: 0;
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .email {
+        margin: 2px 0 0;
+        font-size: 12px;
+        opacity: 0.75;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .time {
+        font-size: 11px;
+        opacity: 0.7;
+        flex: 0 0 auto;
+      }
+      footer {
+        padding: 0 12px 12px;
+        opacity: 0.7;
+        font-size: 11px;
+      }
+      a { color: inherit; }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div>
+        <h1>Demo</h1>
+        <div class="muted">Displays <code>/api/users</code></div>
+      </div>
+    </header>
+
+    <main>
+      <div class="row">
+        <input id="baseUrl" placeholder="Base URL (default: http://localhost:3000)" />
+        <button id="save">Save</button>
+        <button id="refresh">Refresh</button>
+      </div>
+
+      <p id="status" class="muted" style="margin: 10px 0 0;"></p>
+      <div id="list" class="list"></div>
+    </main>
+
+    <footer>
+      Tip: start the web app with <code>pnpm dev</code> and keep it on <code>http://localhost:3000</code>.
+    </footer>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

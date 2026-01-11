@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Demo",
+  "version": "0.1.0",
+  "description": "Shows data from the Demo web app (demo: recent users).",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "http://localhost:3000/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_title": "Demo",
+    "default_popup": "popup.html"
+  }
+}
